@@ -1,0 +1,137 @@
+body {
+    background-color: rgb(34, 34, 34);
+    margin: 0;
+    padding: 0;
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 20px;
+    padding: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    box-sizing: border-box;
+    width: calc(100% / 5 - 20px);
+    height: calc((135vw - 100px) / 5); /* Adjust this value according to your preference */
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .image-wrapper {
+        width: calc(100% / 4 - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .image-wrapper {
+        width: calc(100% / 3 - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .image-wrapper {
+        width: calc(100% / 2 - 20px);
+    }
+}
+
+@media (max-width: 400px) {
+    .image-wrapper {
+        width: calc(100% - 20px);
+    }
+}
+
+.image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.image-wrapper:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent 100%);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.image-title {
+    font-family: poppins;
+    position: absolute;
+    left: 10px;
+    bottom: 22px;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.image-subtitle {
+    font-family: poppins;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.1);
+    z-index: 3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+  }
+  
+  .close {
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #999;
+  }
+  
+  video {
+    width: 100%;
+    height: 100%;
+  }
+  
